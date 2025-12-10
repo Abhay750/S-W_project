@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXHIBITION MAGAZINE</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Fonts/Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'display': ['Anton', 'sans-serif'],
+                    },
+                    colors: {
+                        'ex-black': '#1a1a1a',
+                        'ex-gray': '#f5f5f0', // Off-white/beige tone from image
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for visual fidelity */
+        
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* Text Masking Logic for the Header Logo */
+        .text-mask-i {
+            background: url('https://images.unsplash.com/photo-1509631179647-b849389274e9?q=80&w=300&auto=format&fit=crop') center/cover no-repeat;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        .text-mask-o {
+            background: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop') center/cover no-repeat;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        /* Diagonal Clip Path for the Feature Section */
+        .clip-diagonal {
+            clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* For mobile responsiveness of the clip */
+        @media (max-width: 768px) {
+            .clip-diagonal {
+                clip-path: none;
+            }
+        }
+
+        /* Vertical Text Utility */
+        .writing-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-ex-gray text-black font-sans antialiased">
+
+    <!-- TOP BAR -->
+    <div class="border-b border-gray-300 bg-white">
+        <div class="flex justify-between items-center px-4 py-2 text-xs uppercase tracking-widest">
+            <!-- Hamburger -->
+            <button class="p-2 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            
+            <!-- Right Actions -->
+            <div class="flex space-x-6 font-semibold">
+                <a href="#" class="hover:underline">Login</a>
+                <a href="#" class="bg-black text-white px-4 py-1 hover:bg-gray-800 transition">Subscribe</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / LOGO AREA -->
+    <header class="bg-white pt-4 pb-2 text-center relative border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <!-- Massive Logo -->
+            <div class="relative inline-block">
+                <h1 class="font-display text-[12vw] leading-none tracking-tighter text-black select-none">
+                    EXH<span class="text-mask-i">I</span>BITI<span class="text-mask-o">O</span>N
+                </h1>
+                <span class="absolute bottom-4 right-0 font-display text-xl sm:text-3xl tracking-widest bg-white px-1">MAGAZINE</span>
+            </div>
+
+            <!-- Navigation -->
+            <!-- NAVIGATION -->
+<nav class="mt-6 mb-2 overflow-x-auto relative z-50">
+    <ul class="flex justify-center min-w-max space-x-8 text-xs font-bold uppercase tracking-widest pb-2">
+
+        <!-- Active Link (home) -->
+        <li>
+            <a href="index.html"
+               class="pb-1 border-b-2 border-black">
+               Home
+            </a>
+        </li>
+
+        <!-- About / Fashion -->
+        <li>
+            <a href="about.html"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Fashion
+            </a>
+        </li>
+
+        <li>
+            <a href="more.html"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Art
+            </a>
+        </li>
+
+        <li>
+            <a href="collection.html"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Dressing
+            </a>
+        </li>
+
+        <li>
+            <a href="#"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Beauty
+            </a>
+        </li>
+
+        <li>
+            <a href="#"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Services
+            </a>
+        </li>
+
+        <li>
+            <a href="#"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Shop
+            </a>
+        </li>
+
+        <li>
+            <a href="#"
+               class="pb-1 text-gray-500 hover:text-black hover:border-black hover:border-b-2 transition">
+               Search
+            </a>
+        </li>
+
+    </ul>
+</nav>
+
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-[80vh] bg-black overflow-hidden group">
+        <!-- Background Image -->
+        <img src="bg.webp" 
+             alt="Runway" 
+             class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000 ease-out">
+        
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+            <h2 class="font-sans text-4xl md:text-6xl font-light uppercase tracking-wide mb-2 drop-shadow-lg">
+                Silk Laundry Summer<br>C2 Collection
+            </h2>
+            <p class="text-xs uppercase tracking-[0.3em] mb-8 border-t border-b border-white/30 py-2 px-6">
+                Fashion Trends | Designers
+            </p>
+            <a href="#" class="bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition flex items-center gap-2">
+                Discover More
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        
+        <!-- Bottom overlay gradient -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/80 to-transparent"></div>
+    </section>
+
+    <!-- SUMMER COLLECTION GRID -->
+    <section class="py-16 px-4 max-w-[1600px] mx-auto">
+        <h2 class="font-display text-4xl md:text-6xl text-center mb-12 uppercase tracking-tight text-gray-900">
+            Summer Collection
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[900px]">
+            
+            <!-- Column 1 (Left Stack) -->
+            <div class="flex flex-col gap-6 h-full">
+                <div class="flex-1 relative group overflow-hidden bg-white p-4 pb-12 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover mb-4 filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <h3 class="font-bold uppercase text-sm mb-2">Bottega Veneta</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">The new season features sleek contours, textured fabrics, and daring spirit. A refined approach to modern elegance.</p>
+                </div>
+                <div class="flex-1 relative group overflow-hidden bg-white p-4 pb-12 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover mb-4 filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <h3 class="font-bold uppercase text-sm mb-2">Andrew Muono</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Bold lines and beautiful fabrics define the latest capsule from the visionary designer.</p>
+                </div>
+            </div>
+
+            <!-- Column 2 (Center Big Image) -->
+            <div class="md:col-span-2 h-[500px] md:h-full relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=1200&auto=format&fit=crop" 
+                     alt="Model Running" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-in-out">
+                <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
+                    <h3 class="font-display text-4xl uppercase">Movement</h3>
+                    <p class="font-serif italic text-lg">Capturing the flow of time</p>
+                </div>
+            </div>
+
+            <!-- Column 3 (Right Stack) -->
+            <div class="flex flex-col gap-6 h-full">
+                <div class="flex-1 relative group overflow-hidden bg-white p-4 pb-12 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover mb-4 filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <h3 class="font-bold uppercase text-sm mb-2">Maison Margiela</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Avant-garde tailoring meets deconstruction. A study in white and negative space.</p>
+                </div>
+                <div class="flex-1 relative group overflow-hidden bg-white p-4 pb-12 shadow-sm">
+                    <img src="cristina.jpg" class="w-full h-64 object-cover mb-4 filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <h3 class="font-bold uppercase text-sm mb-2">Cristina Martin</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Limitless expressions, new generation of textile designers. Wear art every day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAGONAL SPLIT FEATURE SECTION -->
+    <section class="relative w-full min-h-[80vh] bg-[#1a1a1a] flex flex-col md:flex-row overflow-hidden">
+        
+        <!-- Left Content (Dark) -->
+        <div class="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-between relative z-10">
+            <!-- Vertical Text -->
+            <div class="absolute top-1/2 left-0 md:left-8 transform -translate-y-1/2 -translate-x-1/2 md:translate-x-0 hidden md:block">
+                <span class="writing-vertical font-display text-8xl text-white/10 tracking-widest uppercase">Exhibition</span>
+            </div>
+
+            <div class="md:ml-24 mt-12 md:mt-32 max-w-sm">
+                <p class="text-gray-300 font-mono text-xs md:text-sm leading-relaxed mb-8">
+                    Merging into the spatial design, the final dress became a stream and a flag, desperately and bravely winding long behind a disappearing human being. While the set of Balenciaga Winter 2022 originally commented on climate, it now reads like a prediction of the terrifying possibility of nuclear winter. (McQuillan, 2022)
+                </p>
+                
+                <div class="w-16 h-16 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition cursor-pointer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content (Image with Clip) -->
+        <div class="absolute inset-0 md:relative md:w-full h-full">
+            <div class="absolute inset-0 md:clip-diagonal bg-white h-full w-full">
+                <img src="blue dress.webp" 
+                     class="w-full h-full object-cover object-top" 
+                     alt="Blue Dress Model">
+                <!-- Overlay Text -->
+                <div class="absolute bottom-10 md:bottom-20 left-0 md:left-[-20%] w-full text-center md:text-left z-20 pointer-events-none">
+                     <h2 class="font-sans font-light text-[12vw] text-black md:text-[#1a1a1a] mix-blend-overlay tracking-widest uppercase pl-8">
+                         Magazine
+                     </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS CALENDAR SECTION -->
+    <section class="border-t border-black">
+        <div class="flex flex-col md:flex-row h-auto md:h-[600px] overflow-hidden">
+            
+            <!-- Sidebar: All Events -->
+            <div class="w-full md:w-24 bg-[#f0f0f0] border-r border-gray-300 flex md:flex-col items-center justify-between p-6 md:py-8">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="md:writing-vertical font-bold uppercase tracking-widest text-xs mt-0 md:mt-8">All Events</span>
+            </div>
+
+            <!-- Event Strip 1 (Passive) -->
+            <div class="flex-1 border-r border-gray-300 bg-[#f5f5f0] hover:bg-white transition duration-300 relative group min-h-[100px] md:min-h-0">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="writing-vertical font-bold text-gray-400 text-2xl uppercase tracking-widest group-hover:text-black transition">Friday, November 15, 2023</span>
+                </div>
+                <div class="absolute bottom-4 left-0 w-full text-center">
+                    <span class="writing-vertical text-[10px] text-gray-400 uppercase">By Andrew</span>
+                </div>
+            </div>
+
+            <!-- Event Strip 2 (Active/Expanded) -->
+            <div class="w-full md:w-[500px] bg-white border-r border-gray-300 p-8 flex flex-col justify-between">
+                <div class="w-full h-64 overflow-hidden mb-6">
+                    <img src="winter.webp" class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold uppercase text-gray-500">Photocall</span>
+                    <h3 class="text-3xl font-display uppercase mt-2 leading-none">Tuesday, January 23, 2024</h3>
+                    <p class="text-sm font-serif italic mt-2 text-gray-600">Winter Collection Sale</p>
+                </div>
+                <div class="mt-8 border-t border-gray-200 pt-4">
+                    <p class="text-xs uppercase tracking-widest text-gray-400">By Matt Jackson</p>
+                </div>
+            </div>
+
+            <!-- Event Strip 3 (Passive) -->
+            <div class="flex-1 border-r border-gray-300 bg-[#f5f5f0] hover:bg-white transition duration-300 relative group min-h-[100px] md:min-h-0">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="writing-vertical font-bold text-gray-400 text-2xl uppercase tracking-widest group-hover:text-black transition">Saturday, March 11, 2024</span>
+                </div>
+                <div class="absolute bottom-4 left-0 w-full text-center">
+                    <span class="writing-vertical text-[10px] text-gray-400 uppercase">By Bottega</span>
+                </div>
+            </div>
+
+             <!-- Event Strip 4 (Passive) -->
+             <div class="flex-1 border-r border-gray-300 bg-[#f5f5f0] hover:bg-white transition duration-300 relative group min-h-[100px] md:min-h-0 hidden lg:block">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="writing-vertical font-bold text-gray-400 text-2xl uppercase tracking-widest group-hover:text-black transition">Wednesday, March 15, 2024</span>
+                </div>
+                <div class="absolute bottom-4 left-0 w-full text-center">
+                    <span class="writing-vertical text-[10px] text-gray-400 uppercase">By Veneta</span>
+                </div>
+            </div>
+
+             <!-- Event Strip 5 (Passive) -->
+             <div class="flex-1 bg-[#f5f5f0] hover:bg-white transition duration-300 relative group min-h-[100px] md:min-h-0 hidden lg:block">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="writing-vertical font-bold text-gray-400 text-2xl uppercase tracking-widest group-hover:text-black transition">Tuesday, April 29, 2024</span>
+                </div>
+                <div class="absolute bottom-4 left-0 w-full text-center">
+                    <span class="writing-vertical text-[10px] text-gray-400 uppercase">By Hype</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#111] text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 space-y-8 md:space-y-0">
+                <div class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white cursor-pointer">Follow</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white cursor-pointer">Enter Your Email</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white cursor-pointer">Links</div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500">
+                <p>&copy; 2025 All Rights Reserved</p>
+                <p class="text-white font-bold text-sm my-4 md:my-0">Exhibition Magazine</p>
+                <p class="hover:text-white cursor-pointer">Subscribe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Script for potential interactions -->
+    <script>
+        // Simple logic to handle horizontal scroll on nav if needed
+        const nav = document.querySelector('nav');
+        nav.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                nav.scrollLeft += e.deltaY;
+            }
+        });
+
+        // Hover effect helper for event strips (optional JS enhancement)
+        const strips = document.querySelectorAll('.group');
+        strips.forEach(strip => {
+            strip.addEventListener('mouseenter', () => {
+                // Could add logic here to expand the strip and collapse others
+                // For now, CSS hover is sufficient for the visual demo
+            });
+        });
+    </script>
+</body>
+</html>

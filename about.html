@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US - Exhibition Magazine</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to enhance the magazine aesthetic */
+        :root {
+            --page-bg: #f5f5f0; /* Off-white/Creamy background */
+            --text-color: #1a1a1a;
+            --border-color: #d1d5db; /* Light gray border */
+        }
+        body {
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            font-family: serif; /* Default to serif for print look */
+        }
+        .container-xl {
+            max-width: 1400px;
+        }
+        /* Custom font size for the large title */
+        .page-title {
+            font-size: clamp(3rem, 10vw, 7rem);
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+            font-weight: 700;
+        }
+        /* Styling for the thin vertical dividers */
+        .v-divider {
+            border-right: 1px solid var(--border-color);
+        }
+        /* Styling for the boxed sections in the sidebar */
+        .sidebar-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        /* For the navigation links, keeping them uppercase and spaced */
+        .nav-link {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.15s;
+        }
+        .nav-link:hover {
+            color: #78716c; /* Stone-500 hover */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Top Bar -->
+    <header class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
+        <div class="container-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center text-sm">
+            <div id="mobile-menu-button" class="cursor-pointer lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+            <div class="hidden lg:block"></div> <!-- Placeholder to balance logo position -->
+            <div class="flex space-x-4">
+                <a href="#" class="nav-link">Log in</a>
+                <a href="#" class="nav-link border-l border-gray-300 pl-4">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Title Section -->
+    <div class="container-xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
+        <div class="flex items-center justify-between">
+            <h1 class="page-title">ABOUT US</h1>
+            <!-- Profile/Logo circle image -->
+            <img src="https://placehold.co/80x80/e5e5e5/333333?text=Logo" alt="Profile circle logo" class="w-20 h-20 rounded-full object-cover border border-gray-300">
+        </div>
+    </div>
+
+    <!-- Magazine Navigation (Simulated Print Bar) -->
+    <nav class="container-xl mx-auto px-4 sm:px-6 lg:px-8 border-y border-gray-300 py-3 mb-8">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 justify-start md:justify-start">
+            <li><a href="about.html" class="nav-link font-bold">About Us</a></li>
+            <!-- <li><a href="" class="nav-link">History</a></li> -->
+            <li><a href="more.html" class="nav-link">Art</a></li>
+            <li><a href="collection.html" class="nav-link">Dressing</a></li>
+            <li><a href="#" class="nav-link">Museum</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#" class="nav-link">Shop</a></li>
+            <li><a href="#" class="nav-link border-l border-gray-300 pl-4">Search</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Grid -->
+    <main class="container-xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column (Main Content) -->
+            <div class="lg:col-span-2">
+                <section class="mb-8">
+                    <h2 class="text-3xl sm:text-4xl font-light tracking-tight mb-1 leading-tight">
+                        MANAGING EXHIBITION, HOSTING <br> EVENTS & AUCTION STORE
+                    </h2>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">
+                        Magazines, Collections & Stores
+                    </p>
+                    
+                    <!-- Hero Image -->
+                    <img src="seductive-woman-black-dress-lying-floor-37813978.webp" alt="A woman in a dramatic outfit looking down" class="w-full h-auto object-cover mb-6 border border-gray-300">
+
+                    <!-- Text Block 1 -->
+                    <h3 class="text-lg font-normal mb-3">
+                        Lorem ipsum dolor sit amet consectetur. Sed purus eu justo tortor cras.
+                    </h3>
+                    <p class="text-sm leading-relaxed mb-8 text-gray-700">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus
+                        suscipit erat, ac facilisis dolor auctor ac. Nullam in turpis dolor.
+                        Donec quis ante eu nunc iaculis auctor. Nullam tristique, nunc vitae
+                        fringilla vehicula, purus ex luctus metus, in tincidunt sapien sapien in mi.
+                        Integer ut tortor euismod, tincidunt purus ac, cursus arcu.
+                        <br><br>
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                        cubilia curae; Vestibulum eu quam eget justo iaculis faucibus. Aliquam
+                        accumsan nisl sed magna pharetra, at volutpat nulla elementum. Suspendisse
+                        potenti. Fusce ac ex sed ligula auctor egestas.
+                    </p>
+                </section>
+
+                <section>
+                    <!-- Band Photo -->
+                    <img src="Black and white photo of a band.jpeg" alt="Black and white photo of a band" class="w-full h-auto object-cover mb-8 border border-gray-300">
+
+                    <!-- Text Block 2 Title -->
+                    <h2 class="text-2xl font-normal mb-6">
+                        LOREM IPSUM DOLOR
+                    </h2>
+
+                    <!-- Desert Image -->
+                    <img src="free-photo-of-vast-salt-flat-landscape-in-san-pedro-de-atacama.jpeg" alt="Vast salt flat landscape" class="w-full h-auto object-cover mb-6 border border-gray-300">
+
+                    <!-- Portrait Image -->
+                    <img src="woman.jpg" alt="Close-up portrait of a woman" class="w-full h-auto object-cover border border-gray-300">
+                </section>
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="lg:col-span-1 border-t lg:border-t-0 lg:border-l border-gray-300 pl-0 lg:pl-8 pt-8 lg:pt-0">
+                
+                <!-- Box 1: Opening Hours -->
+                <div class="sidebar-box">
+                    <img src="stock-photo-old-clock-drawing-298266371.jpg" alt="Clock illustration" class="w-full h-auto object-cover mb-4 border border-gray-300">
+                    
+                    <h4 class="text-lg font-semibold uppercase tracking-wider mb-3 border-b border-gray-300 pb-2">
+                        OPENING HOURS
+                    </h4>
+                    <div class="text-sm space-y-1">
+                        <div class="flex justify-between"><span>Monday</span><span>9:00AM - 5:30PM</span></div>
+                        <div class="flex justify-between"><span>Tuesday</span><span>9:00AM - 5:30PM</span></div>
+                        <div class="flex justify-between"><span>Wednesday</span><span>9:00AM - 5:30PM</span></div>
+                        <div class="flex justify-between"><span>Thursday</span><span>9:00AM - 5:30PM</span></div>
+                        <div class="flex justify-between"><span>Friday</span><span>9:00AM - 6:00PM</span></div>
+                        <div class="flex justify-between"><span>Saturday</span><span>10:00AM - 4:00PM</span></div>
+                        <div class="flex justify-between"><span>Sunday</span><span class="font-bold">CLOSED</span></div>
+                    </div>
+                </div>
+
+                <!-- Box 2: Get in Touch -->
+                <div class="sidebar-box">
+                    <img src="old phone.jpg" alt="Vintage desk phone" class="w-full h-auto object-cover mb-4 border border-gray-300">
+                    
+                    <h4 class="text-lg font-semibold uppercase tracking-wider mb-3 border-b border-gray-300 pb-2">
+                        GET IN TOUCH
+                    </h4>
+                    <div class="text-sm space-y-2">
+                        <p><span class="font-semibold">Belconnen:</span> 02 6251 9014</p>
+                        <p><span class="font-semibold">Fyshwick:</span> 02 6248 988 254</p>
+                        <p><span class="font-semibold">Email Us:</span> <a href="#" class="underline">Click Here</a></p>
+                    </div>
+                </div>
+
+                <!-- Box 3: Find Us -->
+                <div class="sidebar-box">
+                    <img src="Map illustration.jpg" alt="Map illustration" class="w-full h-auto object-cover mb-4 border border-gray-300">
+                    
+                    <h4 class="text-lg font-semibold uppercase tracking-wider mb-3 border-b border-gray-300 pb-2">
+                        FIND US
+                    </h4>
+                    <div class="text-sm space-y-3">
+                        <div>
+                            <p class="font-semibold">Belconnen</p>
+                            <p>19 Verity Place, Belconnen</p>
+                            <p>ACT, Australia</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Fyshwick</p>
+                            <p>72 Barrier St, Fyshwick</p>
+                            <p>ACT, Australia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Sidebar Images -->
+                <div class="space-y-4">
+                    <img src="door way.jpg" alt="Man standing in a doorway" class="w-full h-auto object-cover border border-gray-300">
+                    <img src="womanpose.jpg" alt="Woman posing on the floor" class="w-full h-auto object-cover border border-gray-300">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-gray-300 mt-12 pt-8 pb-4 text-xs font-sans">
+        <div class="container-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Footer Bar -->
+            <div class="flex flex-wrap justify-between items-center border-b border-neutral-700 pb-4 mb-4 uppercase tracking-widest gap-4">
+                <a href="#" class="hover:text-white transition">Follow</a>
+                <div class="flex flex-grow max-w-sm">
+                    <input type="email" placeholder="ENTER YOUR EMAIL" class="flex-grow bg-transparent border-b border-gray-500 py-1 focus:outline-none focus:border-white text-gray-300 placeholder-gray-500 text-sm">
+                </div>
+                <a href="#" class="hover:text-white transition">Legal</a>
+                <a href="#" class="hover:text-white transition border-l border-neutral-700 pl-4">Subscribe</a>
+            </div>
+
+            <!-- Bottom Footer Bar -->
+            <div class="flex flex-wrap justify-between items-center pt-2 gap-2">
+                <p>BOOK. ALL RIGHTS RESERVED</p>
+                <p>EXHIBITION MAGAZINE</p>
+                <p>SUBSCRIBE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to toggle a mobile menu (though the nav is currently static)
+        const menuButton = document.getElementById('mobile-menu-button');
+        const nav = document.querySelector('nav ul');
+        
+        // This is a placeholder for actual mobile menu functionality, 
+        // as the design is primarily static.
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                // In a real application, you would toggle a class on the navigation list
+                // to make it visible/hidden on mobile.
+                console.log("Mobile menu button clicked.");
+            });
+        }
+    </script>
+</body>
+</html>

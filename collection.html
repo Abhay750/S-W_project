@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Luxury Fashion Magazine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Base Reset and Variables --- */
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --text-light: #aaa;
+    --accent-color: #f00; /* For subscribe buttons if they were red/accented */
+    --font-heading: 'Playfair Display', serif; /* Use a sophisticated font */
+    --font-body: 'Poppins', sans-serif; /* Use a modern sans-serif */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px; /* Adjust as needed for the wide look */
+    margin: 0 auto;
+    padding: 0 40px; /* Some padding on the sides */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin-bottom: 20px;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 2px 0;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 5rem; /* Large font size for the COLLECTIONS text */
+    font-weight: 700;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 60px; /* Size of the image/icon within the title */
+    height: 60px;
+    border-radius: 50%; /* If the image is circular */
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.header-actions button {
+    padding: 8px 15px;
+    border: 1px solid var(--primary-color);
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+.subscribe-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.main-nav a.active {
+    font-weight: 700;
+    position: relative;
+}
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* --- OUR BEST COLLECTIONS Section --- */
+.best-collections-section {
+    padding: 60px 0;
+}
+
+.best-collections-section .section-heading {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.best-collections-section .section-description {
+    max-width: 400px;
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Adjust columns to match the visual layout */
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+.collection-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.large-image {
+    grid-row: 1 / 3;
+    min-height: 500px; /* Ensure a minimum height for the main image */
+}
+
+.bw-image {
+    grid-row: 1 / 2;
+    min-height: 250px;
+}
+
+.new-collections-box {
+    grid-row: 2 / 3;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: flex-end; /* Align content to the bottom */
+    padding: 20px;
+    min-height: 250px;
+}
+
+.new-collections-content h3 {
+    margin-bottom: 10px;
+}
+.new-collections-content p {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.new-collections-thumbs {
+    display: flex;
+    gap: 5px;
+}
+.new-collections-thumbs img {
+    width: calc(33.33% - 3.33px); /* 3 images in a row */
+    height: 80px;
+    object-fit: cover;
+}
+
+.background-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 8rem; /* Huge background text */
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0000000d; /* Very subtle black/grey color */
+    pointer-events: none;
+    z-index: -1;
+    transform: translate(5%, 20%);
+}
+
+/* --- Recent Collections Bar --- */
+.recent-collections-bar {
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.bar-item {
+    padding: 15px 40px;
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #333;
+}
+.bar-item:last-child {
+    border-right: none;
+}
+
+/* --- OUR LATEST UNIQUE COLLECTION Section --- */
+.latest-collection-section {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.latest-collection-section .section-header-left {
+    grid-column: 1 / 2;
+}
+
+.latest-collection-section .section-header-right {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 50px; /* Space between the text and cards */
+}
+
+.latest-collection-section .section-header-right p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.explore-btn {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.collection-carousel {
+    grid-column: 1 / 3;
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    position: relative;
+    overflow-x: hidden; /* Hide the next-card overflow if not using actual carousel JS */
+}
+
+.collection-card {
+    position: relative;
+    flex: 0 0 32%; /* 3 cards visible, adjust percentage for gap */
+    height: 400px; /* Fixed height for visual consistency */
+    overflow: hidden;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+.card-text-overlay h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-text-overlay p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+.arrow-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    line-height: 1;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 30px 40px;
+    font-size: 0.9rem;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-col {
+    padding: 0 20px;
+}
+
+.email-input {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.email-input input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    width: 80%;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+.email-input input::placeholder {
+    color: var(--text-light);
+    opacity: 1;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.subscribe-btn-footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    font-weight: 600;
+}
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-top">
+            <button class="menu-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <h1 class="site-title">
+                <img src="collections-logo-icon.jpg" alt="Icon" class="logo-icon">
+                COLLECTIONS
+            </h1>
+            <div class="header-actions">
+                <button class="login-btn">Login $\rightarrow$</button>
+                <button class="subscribe-btn">SUBSCRIBE $\rightarrow$</button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">Collections</a></li>
+                <li><a href="about.html">Fashion</a></li>
+                <li><a href="more.html">Art</a></li>
+                <li><a href="#">Decoding</a></li>
+                <li><a href="#">Beauty</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="best-collections-section">
+            <h2 class="section-heading">OUR BEST <br> COLLECTIONS</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet consectetur. Sodales sagittis tincidunt tortor lorem donec. Sed purus eu justo tortor cras. Sodales sagittis tincidunt tortor lorem donec.</p>
+
+            <div class="collections-grid">
+                <div class="collection-item large-image">
+                    <img src="large-model-image.jpg" alt="Model in white dress walking">
+                </div>
+
+                <div class="collection-item bw-image">
+                    <img src="bw-model-image.jpg" alt="Model posing in black and white">
+                </div>
+
+                <div class="collection-item new-collections-box">
+                    <div class="new-collections-content">
+                        <h3>NEW COLLECTIONS</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sodales sagittis tincidunt tortor lorem donec. Sed purus eu justo tortor cras. Sodales sagittis tincidunt tortor lorem donec.</p>
+                        <div class="new-collections-thumbs">
+                            <img src="thumb-1.jpg" alt="Clothing rack thumbnail">
+                            <img src="thumb-2.jpg" alt="Blue denim and patterned clothes thumbnail">
+                            <img src="thumb-3.jpg" alt="Group of people shopping thumbnail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item background-text">
+                    COLLECTIONS
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-collections-bar">
+            <div class="bar-item">RECENT COLLECTIONS</div>
+            <div class="bar-item">EXPLORE ALL RECENT COLLECTIONS</div>
+            <div class="bar-item">EXPLORE ALL RECENT COLLECTIONS</div>
+        </section>
+
+        <section class="latest-collection-section">
+            <div class="section-header-left">
+                <h2 class="section-heading">OUR LATEST <br> UNIQUE COLLECTION</h2>
+            </div>
+            <div class="section-header-right">
+                <p>Lorem ipsum dolor sit amet consectetur. Sed purus eu justo tortor cras. Sodales sagittis tincidunt tortor lorem donec.</p>
+                <button class="explore-btn">Explore Now $\rightarrow$</button>
+            </div>
+
+            <div class="collection-carousel">
+                <div class="collection-card">
+                    <img src="card-1-image.jpg" alt="Close-up of clothes on a rack">
+                    <div class="card-text-overlay">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sodales sagittis tincidunt tortor lorem donec.</p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img src="card-2-image.jpg" alt="Woman shopping for clothes">
+                    <div class="card-text-overlay">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sodales sagittis tincidunt tortor lorem donec.</p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img src="card-3-image.jpg" alt="Various shirts on hangers">
+                    <div class="card-text-overlay">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sodales sagittis tincidunt tortor lorem donec.</p>
+                    </div>
+                </div>
+                <div class="collection-card next-card">
+                    <img src="card-4-image.jpg" alt="Dark suits on hangers">
+                </div>
+                <div class="carousel-nav">
+                    <button class="arrow-btn">&leftarrow;</button>
+                    <button class="arrow-btn">&rightarrow;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <a href="#">FOLLOW</a>
+            </div>
+            <div class="footer-col email-input">
+                <input type="email" placeholder="ENTER YOUR E-MAIL">
+            </div>
+            <div class="footer-col">
+                <a href="#">LEGAL</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy;2024 | ALL RIGHTS RESERVED</span>
+            <a href="#">EXHIBITION MAGAZINE</a>
+            <button class="subscribe-btn-footer">SUBSCRIBE</button>
+        </div>
+    </footer>
+</body>
+</html>
